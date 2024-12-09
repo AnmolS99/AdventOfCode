@@ -1,0 +1,42 @@
+import math
+
+file = open('input.txt', 'r')
+
+def is_safe_extended(nums):
+    if is_safe(nums):
+        return True
+    else:
+        for i in range(len(nums)):
+            tmp_nums = nums.copy()
+            tmp_nums.pop(i)
+            if is_safe(tmp_nums):
+                return True
+        return False
+
+def is_safe(nums):
+    order = math.copysign(1, nums[1] - nums[0])
+    prev_num = nums[0]
+    
+    for num in nums[1:]:
+
+        if order == 1:
+            if num - prev_num > 3 or num - prev_num < 1:
+                return False
+        
+        else:
+            if prev_num - num > 3 or prev_num - num < 1:
+                return False
+        
+        prev_num = num
+    
+    return True
+
+num_safe_reports = 0
+
+for report in file.readlines():    
+    data = report.strip()
+    nums = list(map(int, data.split()))
+    if is_safe_extended(nums):
+        num_safe_reports += 1
+
+print(num_safe_reports)
