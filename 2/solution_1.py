@@ -1,6 +1,6 @@
 import math
 
-file = open('input.txt', 'r')
+file = open('2/input.txt', 'r')
 
 def is_safe(nums):
     order = math.copysign(1, nums[1] - nums[0])

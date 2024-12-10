@@ -1,7 +1,7 @@
 
 left = []
 right = []
-with open("input.txt", "r") as f:
+with open("1/input.txt", "r") as f:
     while True:
         nums = f.readline().split()
         if not nums:

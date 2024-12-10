@@ -2,7 +2,6 @@ import re
 
 def calculate_product(mul_string: str):
     num1, num2 = mul_string[4:-1].split(',')
-    print(f"{num1} {num2}")
     return int(num1)*int(num2)
 
 pattern = r'mul\(\d+,\d+\)'

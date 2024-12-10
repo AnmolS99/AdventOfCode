@@ -1,6 +1,6 @@
 import math
 
-file = open('input.txt', 'r')
+file = open('2/input.txt', 'r')
 
 def is_safe_extended(nums):
     if is_safe(nums):
