@@ -31,5 +31,3 @@ for equation in equations:
         equation_sum += answer
 
 print(equation_sum)
-
-
